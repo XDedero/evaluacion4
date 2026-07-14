@@ -1,0 +1,498 @@
+[
+  {
+    "id": 1,
+    "name": "Notebook Lenovo ThinkPad X1 Carbon",
+    "category": "Notebooks",
+    "stock": 5,
+    "href": "/producto-notebook-lenovo-thinkpad-x1.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Procesador", "value": "Intel Core i7-1365U de 13.ª generación" },
+      { "label": "RAM", "value": "16 GB LPDDR5" },
+      { "label": "Almacenamiento", "value": "512 GB SSD NVMe" },
+      { "label": "Pantalla", "value": "14 pulgadas IPS 1920x1200, 400 nits" },
+      { "label": "Sistema Operativo", "value": "Windows 11 Pro" },
+      { "label": "Peso", "value": "1,12 kg" }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Notebook HP Pavilion 15",
+    "category": "Notebooks",
+    "stock": 8,
+    "href": "/producto-notebook-hp-pavilion-15.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Procesador", "value": "AMD Ryzen 7 7730U" },
+      { "label": "RAM", "value": "16 GB DDR4-3200" },
+      { "label": "Almacenamiento", "value": "1 TB SSD NVMe" },
+      { "label": "Pantalla", "value": "15,6 pulgadas FHD IPS 1920x1080" },
+      { "label": "Sistema Operativo", "value": "Windows 11 Home" },
+      { "label": "Peso", "value": "1,75 kg" }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Notebook Dell Inspiron 14",
+    "category": "Notebooks",
+    "stock": 3,
+    "href": "/producto-notebook-dell-inspiron-14.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Procesador", "value": "Intel Core i5-1335U" },
+      { "label": "RAM", "value": "8 GB LPDDR5" },
+      { "label": "Almacenamiento", "value": "256 GB SSD NVMe" },
+      { "label": "Pantalla", "value": "14 pulgadas FHD+ 1920x1200" },
+      { "label": "Sistema Operativo", "value": "Ubuntu Linux 22.04 LTS" },
+      { "label": "Peso", "value": "1,55 kg" }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Router TP-Link Archer AX73",
+    "category": "Routers",
+    "stock": 12,
+    "href": "/producto-router-tplink-archer-ax73.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Estándar Wi-Fi", "value": "Wi-Fi 6 (802.11ax)" },
+      { "label": "Bandas", "value": "Dual Band 2,4 GHz + 5 GHz" },
+      { "label": "Velocidad", "value": "AX5400 (574 + 4804 Mbps)" },
+      { "label": "Puertos Ethernet", "value": "4 × Gigabit LAN + 1 × Gigabit WAN" },
+      { "label": "Procesador", "value": "Qualcomm 1,5 GHz Triple-Core" },
+      { "label": "Memoria", "value": "512 MB RAM" }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Router ASUS RT-AX86U",
+    "category": "Routers",
+    "stock": 7,
+    "href": "/producto-router-asus-rt-ax86u.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Estándar Wi-Fi", "value": "Wi-Fi 6 (802.11ax)" },
+      { "label": "Bandas", "value": "Dual Band 2,4 GHz + 5 GHz" },
+      { "label": "Velocidad", "value": "AX5700 (861 + 4804 Mbps)" },
+      { "label": "Puertos Ethernet", "value": "4 × Gigabit LAN + 1 × 2.5G WAN" },
+      { "label": "Procesador", "value": "Broadcom BCM4908 1,8 GHz Quad-Core" },
+      { "label": "Memoria", "value": "1 GB RAM" }
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Router Xiaomi Mi Router AX3600",
+    "category": "Routers",
+    "stock": 0,
+    "href": "/producto-router-xiaomi-ax3600.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Estándar Wi-Fi", "value": "Wi-Fi 6 (802.11ax)" },
+      { "label": "Bandas", "value": "Dual Band 2,4 GHz + 5 GHz" },
+      { "label": "Velocidad", "value": "AX3600 (574 + 2976 Mbps)" },
+      { "label": "Puertos Ethernet", "value": "3 × Gigabit LAN + 1 × Gigabit WAN" },
+      { "label": "Procesador", "value": "Qualcomm IPQ8071A 1,4 GHz Quad-Core" },
+      { "label": "Memoria", "value": "512 MB RAM" }
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Router D-Link DIR-X5460",
+    "category": "Routers",
+    "stock": 4,
+    "href": "/producto-router-dlink-dir-x5460.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Estándar Wi-Fi", "value": "Wi-Fi 6 (802.11ax)" },
+      { "label": "Bandas", "value": "Dual Band 2,4 GHz + 5 GHz" },
+      { "label": "Velocidad", "value": "AX5400 (574 + 4804 Mbps)" },
+      { "label": "Puertos Ethernet", "value": "4 × Gigabit LAN + 1 × Gigabit WAN" },
+      { "label": "Procesador", "value": "Qualcomm 1,5 GHz Triple-Core" },
+      { "label": "Memoria", "value": "512 MB RAM" }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Router Cisco RV340",
+    "category": "Routers",
+    "stock": 2,
+    "href": "/producto-router-cisco-rv340.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Tipo", "value": "Router VPN Empresarial" },
+      { "label": "Puertos WAN", "value": "2 × Gigabit WAN" },
+      { "label": "Puertos LAN", "value": "4 × Gigabit LAN" },
+      { "label": "VPN", "value": "IPsec / SSL hasta 50 túneles" },
+      { "label": "Firewall", "value": "SPI + filtrado de contenido" },
+      { "label": "Memoria", "value": "2 GB Flash" }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Switch TP-Link TL-SG108",
+    "category": "Switches",
+    "stock": 15,
+    "href": "/producto-switch-tplink-tl-sg108.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Puertos", "value": "8 × 10/100/1000 Mbps RJ45" },
+      { "label": "Velocidad", "value": "Gigabit (1000 Mbps)" },
+      { "label": "Tipo", "value": "No administrable (Plug & Play)" },
+      { "label": "Buffer", "value": "2 Mb" },
+      { "label": "Jumbo Frame", "value": "16 KB" },
+      { "label": "Montaje", "value": "Escritorio / Pared" }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Switch Cisco SG350-10",
+    "category": "Switches",
+    "stock": 6,
+    "href": "/producto-switch-cisco-sg350-10.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Puertos", "value": "8 × Gigabit RJ45 + 2 × SFP" },
+      { "label": "Velocidad", "value": "Gigabit (1000 Mbps)" },
+      { "label": "Tipo", "value": "Administrable (Capa 3 Lite)" },
+      { "label": "VLANs", "value": "Hasta 256 VLANs" },
+      { "label": "PoE", "value": "No" },
+      { "label": "Montaje", "value": "Rack / Escritorio" }
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Switch Netgear GS308",
+    "category": "Switches",
+    "stock": 10,
+    "href": "/producto-switch-netgear-gs308.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Puertos", "value": "8 × 10/100/1000 Mbps RJ45" },
+      { "label": "Velocidad", "value": "Gigabit (1000 Mbps)" },
+      { "label": "Tipo", "value": "No administrable (Plug & Play)" },
+      { "label": "Buffer", "value": "2 Mb" },
+      { "label": "Jumbo Frame", "value": "9 KB" },
+      { "label": "Montaje", "value": "Escritorio / Pared" }
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Switch D-Link DGS-108",
+    "category": "Switches",
+    "stock": 0,
+    "href": "/producto-switch-dlink-dgs-108.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Puertos", "value": "8 × 10/100/1000 Mbps RJ45" },
+      { "label": "Velocidad", "value": "Gigabit (1000 Mbps)" },
+      { "label": "Tipo", "value": "No administrable (Plug & Play)" },
+      { "label": "Buffer", "value": "1,5 Mb" },
+      { "label": "Jumbo Frame", "value": "10 KB" },
+      { "label": "Montaje", "value": "Escritorio / Pared" }
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Access Point Ubiquiti UniFi AP 6 Lite",
+    "category": "Access Points",
+    "stock": 9,
+    "href": "/producto-ap-ubiquiti-unifi-6-lite.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Estándar Wi-Fi", "value": "Wi-Fi 6 (802.11ax)" },
+      { "label": "Bandas", "value": "Dual Band 2,4 GHz + 5 GHz" },
+      { "label": "Velocidad", "value": "AX1500 (300 + 1201 Mbps)" },
+      { "label": "Antenas", "value": "2x2 MIMO internas" },
+      { "label": "Alimentación", "value": "PoE 802.3af (inyector incluido)" },
+      { "label": "Gestión", "value": "UniFi Controller / App" }
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Access Point TP-Link EAP245",
+    "category": "Access Points",
+    "stock": 11,
+    "href": "/producto-ap-tplink-eap245.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Estándar Wi-Fi", "value": "Wi-Fi 5 (802.11ac Wave 2)" },
+      { "label": "Bandas", "value": "Dual Band 2,4 GHz + 5 GHz" },
+      { "label": "Velocidad", "value": "AC1750 (450 + 1300 Mbps)" },
+      { "label": "Antenas", "value": "3x3 MIMO + Beamforming" },
+      { "label": "Alimentación", "value": "PoE 802.3af o adaptador DC" },
+      { "label": "Gestión", "value": "Omada SDN / Standalone" }
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Access Point Aruba Instant On AP22",
+    "category": "Access Points",
+    "stock": 5,
+    "href": "/producto-ap-aruba-instant-on-ap22.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Estándar Wi-Fi", "value": "Wi-Fi 6 (802.11ax)" },
+      { "label": "Bandas", "value": "Dual Band 2,4 GHz + 5 GHz" },
+      { "label": "Velocidad", "value": "AX1800 (574 + 1201 Mbps)" },
+      { "label": "Antenas", "value": "2x2 MIMO + MU-MIMO" },
+      { "label": "Alimentación", "value": "PoE 802.3af (inyector no incluido)" },
+      { "label": "Gestión", "value": "Instant On App / Cloud" }
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Access Point Cisco CBW150AX",
+    "category": "Access Points",
+    "stock": 3,
+    "href": "/producto-ap-cisco-cbw150ax.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Estándar Wi-Fi", "value": "Wi-Fi 6 (802.11ax)" },
+      { "label": "Bandas", "value": "Dual Band 2,4 GHz + 5 GHz" },
+      { "label": "Velocidad", "value": "AX1500 (287 + 1201 Mbps)" },
+      { "label": "Antenas", "value": "2x2 MIMO internas" },
+      { "label": "Alimentación", "value": "PoE 802.3af" },
+      { "label": "Gestión", "value": "Cisco Business Dashboard" }
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Access Point MikroTik hAP ax3",
+    "category": "Access Points",
+    "stock": 7,
+    "href": "/producto-ap-mikrotik-hap-ax3.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Estándar Wi-Fi", "value": "Wi-Fi 6 (802.11ax)" },
+      { "label": "Bandas", "value": "Dual Band 2,4 GHz + 5 GHz" },
+      { "label": "Velocidad", "value": "AX1800 (574 + 1201 Mbps)" },
+      { "label": "Antenas", "value": "4 internas" },
+      { "label": "Alimentación", "value": "PoE 802.3af / DC 12-28 V" },
+      { "label": "Gestión", "value": "RouterOS v7 / WinBox" }
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Impresora HP LaserJet Pro M404dn",
+    "category": "Impresoras",
+    "stock": 4,
+    "href": "/producto-impresora-hp-laserjet-m404dn.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Tecnología", "value": "Láser monocromo" },
+      { "label": "Velocidad", "value": "Hasta 40 ppm" },
+      { "label": "Resolución", "value": "1200 × 1200 dpi" },
+      { "label": "Conectividad", "value": "Ethernet + USB 2.0" },
+      { "label": "Ciclo Mensual", "value": "Hasta 80.000 páginas" },
+      { "label": "Bandeja", "value": "350 hojas (250 + 100)" }
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Impresora Epson EcoTank L3250",
+    "category": "Impresoras",
+    "stock": 6,
+    "href": "/producto-impresora-epson-ecotank-l3250.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Tecnología", "value": "Inyección de tinta (EcoTank)" },
+      { "label": "Velocidad", "value": "Hasta 33 ppm negro / 15 ppm color" },
+      { "label": "Resolución", "value": "5760 × 1440 dpi" },
+      { "label": "Conectividad", "value": "Wi-Fi + USB 2.0" },
+      { "label": "Funciones", "value": "Impresión, copia y escaneo" },
+      { "label": "Rendimiento", "value": "Hasta 4500 pp negro con tanque lleno" }
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Impresora Brother DCP-L2550DW",
+    "category": "Impresoras",
+    "stock": 0,
+    "href": "/producto-impresora-brother-dcp-l2550dw.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Tecnología", "value": "Láser monocromo" },
+      { "label": "Velocidad", "value": "Hasta 36 ppm" },
+      { "label": "Resolución", "value": "2400 × 600 dpi" },
+      { "label": "Conectividad", "value": "Wi-Fi + Ethernet + USB 2.0" },
+      { "label": "Funciones", "value": "Impresión, copia y escaneo" },
+      { "label": "Bandeja", "value": "250 hojas + alimentador ADF" }
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Sensor IoT de temperatura y humedad Xiaomi",
+    "category": "Sensores IoT",
+    "stock": 20,
+    "href": "/producto-sensor-xiaomi-temp-hum.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Tipo", "value": "Sensor ambiental" },
+      { "label": "Mediciones", "value": "Temperatura y humedad relativa" },
+      { "label": "Rango temperatura", "value": "-20 °C a +60 °C" },
+      { "label": "Precisión", "value": "±0,3 °C / ±3 % HR" },
+      { "label": "Conectividad", "value": "Bluetooth 4.2 BLE" },
+      { "label": "Batería", "value": "CR2032 (aprox. 1 año de duración)" }
+    ]
+  },
+  {
+    "id": 22,
+    "name": "Sensor IoT de movimiento Aqara",
+    "category": "Sensores IoT",
+    "stock": 14,
+    "href": "/producto-sensor-aqara-movimiento.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Tipo", "value": "Sensor PIR de movimiento" },
+      { "label": "Rango", "value": "Hasta 7 m / 170°" },
+      { "label": "Tiempo de respuesta", "value": "Instantáneo (aprox. 1 s)" },
+      { "label": "Conectividad", "value": "Zigbee 3.0" },
+      { "label": "Hub requerido", "value": "Aqara Hub (Zigbee)" },
+      { "label": "Batería", "value": "CR2450 (aprox. 2 años)" }
+    ]
+  },
+  {
+    "id": 23,
+    "name": "Sensor IoT de calidad de aire Bosch",
+    "category": "Sensores IoT",
+    "stock": 8,
+    "href": "/producto-sensor-bosch-aire.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Tipo", "value": "Sensor multiparámetro ambiental" },
+      { "label": "Mediciones", "value": "CO2, PM2.5, PM10, VOC" },
+      { "label": "Rango CO2", "value": "400 – 5000 ppm" },
+      { "label": "Precisión", "value": "±50 ppm + 3 % lectura" },
+      { "label": "Conectividad", "value": "Wi-Fi 2,4 GHz / LoRaWAN" },
+      { "label": "Alimentación", "value": "USB-C 5 V / PoE" }
+    ]
+  },
+  {
+    "id": 24,
+    "name": "Sensor IoT de apertura de puerta Aqara",
+    "category": "Sensores IoT",
+    "stock": 18,
+    "href": "/producto-sensor-aqara-puerta.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Tipo", "value": "Sensor magnético de contacto" },
+      { "label": "Detección", "value": "Apertura / cierre" },
+      { "label": "Alcance", "value": "Hasta 22 mm entre imán y sensor" },
+      { "label": "Conectividad", "value": "Zigbee 3.0" },
+      { "label": "Hub requerido", "value": "Aqara Hub (Zigbee)" },
+      { "label": "Batería", "value": "CR1632 (aprox. 2 años)" }
+    ]
+  },
+  {
+    "id": 25,
+    "name": "Sensor IoT de humedad de suelo Sonoff",
+    "category": "Sensores IoT",
+    "stock": 6,
+    "href": "/producto-sensor-sonoff-suelo.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Tipo", "value": "Sensor capacitivo de humedad del suelo" },
+      { "label": "Medición", "value": "Humedad volumétrica del suelo" },
+      { "label": "Rango", "value": "0 % – 100 % VWC" },
+      { "label": "Conectividad", "value": "Zigbee 3.0 / Sonoff NSPanel" },
+      { "label": "Alimentación", "value": "Pila 2 × AAA (aprox. 6 meses)" },
+      { "label": "Protección", "value": "IPX5 resistente al agua" }
+    ]
+  },
+  {
+    "id": 26,
+    "name": "Kit Arduino Uno R3 Starter",
+    "category": "Kits Arduino",
+    "stock": 9,
+    "href": "/producto-kit-arduino-uno-r3.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Microcontrolador", "value": "ATmega328P (8-bit AVR)" },
+      { "label": "Voltaje", "value": "5 V (USB o externo 7-12 V)" },
+      { "label": "Pines digitales", "value": "14 (6 con salida PWM)" },
+      { "label": "Pines analógicos", "value": "6 (ADC de 10-bit)" },
+      { "label": "Memoria", "value": "32 KB Flash / 2 KB SRAM" },
+      { "label": "Incluye", "value": "Protoboard, sensores, LEDs, cables y resistencias" }
+    ]
+  },
+  {
+    "id": 27,
+    "name": "Kit Arduino Mega 2560 Avanzado",
+    "category": "Kits Arduino",
+    "stock": 5,
+    "href": "/producto-kit-arduino-mega-2560.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Microcontrolador", "value": "ATmega2560 (8-bit AVR)" },
+      { "label": "Voltaje", "value": "5 V (USB o externo 7-12 V)" },
+      { "label": "Pines digitales", "value": "54 (15 con salida PWM)" },
+      { "label": "Pines analógicos", "value": "16 (ADC de 10-bit)" },
+      { "label": "Memoria", "value": "256 KB Flash / 8 KB SRAM" },
+      { "label": "Incluye", "value": "Shield Ethernet, display LCD, sensores y actuadores" }
+    ]
+  },
+  {
+    "id": 28,
+    "name": "Cámara de vigilancia Hikvision DS-2CD2043G2-I",
+    "category": "Cámaras de Vigilancia",
+    "stock": 7,
+    "href": "/producto-camara-hikvision-ds-2cd2043g2.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Resolución", "value": "4 MP (2560 × 1440)" },
+      { "label": "Sensor", "value": "CMOS 1/2.7 progressive scan" },
+      { "label": "Visión nocturna", "value": "IR hasta 30 m" },
+      { "label": "Conectividad", "value": "Ethernet RJ45 PoE (802.3af)" },
+      { "label": "Protección", "value": "IP67 exterior" },
+      { "label": "Compresión", "value": "H.265+ / H.264+" }
+    ]
+  },
+  {
+    "id": 29,
+    "name": "Cámara de vigilancia Dahua IPC-HDW2431T-AS",
+    "category": "Cámaras de Vigilancia",
+    "stock": 4,
+    "href": "/producto-camara-dahua-ipc-hdw2431t.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Resolución", "value": "4 MP (2688 × 1520)" },
+      { "label": "Sensor", "value": "CMOS 1/3 progressive scan" },
+      { "label": "Visión nocturna", "value": "IR Smart hasta 30 m" },
+      { "label": "Conectividad", "value": "Ethernet RJ45 PoE (802.3af)" },
+      { "label": "Protección", "value": "IP67 + IK10 antivandálica" },
+      { "label": "Compresión", "value": "H.265+ / H.264" }
+    ]
+  },
+  {
+    "id": 30,
+    "name": "Cámara de vigilancia TP-Link Tapo C310",
+    "category": "Cámaras de Vigilancia",
+    "stock": 10,
+    "href": "/producto-camara-tplink-tapo-c310.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Resolución", "value": "3 MP (2304 × 1296)" },
+      { "label": "Sensor", "value": "CMOS 1/2.7" },
+      { "label": "Visión nocturna", "value": "IR hasta 30 m" },
+      { "label": "Conectividad", "value": "Wi-Fi 2,4 GHz + Ethernet" },
+      { "label": "Protección", "value": "IP66 exterior" },
+      { "label": "Almacenamiento", "value": "MicroSD hasta 256 GB" }
+    ]
+  },
+  {
+    "id": 31,
+    "name": "Cable de Red UTP Cat6 100 metros",
+    "category": "Cable de Red",
+    "stock": 1,
+    "href": "/producto-cable-red-utp-cat6-100m.html",
+    "images": ["img1", "img2", "img3"],
+    "specs": [
+      { "label": "Categoría", "value": "Cat6 (ANSI/TIA/EIA-568)" },
+      { "label": "Longitud", "value": "100 metros (bobina)" },
+      { "label": "Blindaje", "value": "UTP sin blindaje (U/UTP)" },
+      { "label": "Calibre", "value": "24 AWG cobre sólido" },
+      { "label": "Ancho de banda", "value": "250 MHz" },
+      { "label": "Velocidad", "value": "Hasta 1 Gbps (1000BASE-T)" }
+    ]
+  }
+]
