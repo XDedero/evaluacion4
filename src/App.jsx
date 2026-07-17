@@ -39,7 +39,6 @@ function App() {
 
   useEffect(() => {
     const loadProducts = async () => {
-      // Si ya hay productos en localStorage, no recargar del servidor
       const saved = localStorage.getItem('catalogProducts');
       if (saved && JSON.parse(saved).length > 0) {
         setLoading(false);
@@ -71,7 +70,6 @@ function App() {
     loadProducts()
   }, [])
 
-  // Persistir productos y papelera a localStorage cada vez que cambien
   useEffect(() => {
     if (!loading) {
       localStorage.setItem('catalogProducts', JSON.stringify(products))

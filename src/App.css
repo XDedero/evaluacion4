@@ -643,6 +643,7 @@ body {
   .section-header p {
     font-size: 0.95rem;
   }
+<<<<<<< HEAD
 }
 
 .crud-section {
@@ -979,4 +980,6 @@ body {
     border-left: 4px solid #00c010f5;
     border-radius: 8px;
     display: inline-block;
+=======
+>>>>>>> b460b9ef539254bf8a86170dc1738734a7194893
 }
