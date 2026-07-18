@@ -38,6 +38,10 @@ function App() {
   const [activeCategory, setActiveCategory] = useState(getCategoryFromURL)
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const loadProducts = async () => {
       const saved = localStorage.getItem('catalogProducts');
       if (saved && JSON.parse(saved).length > 0) {
@@ -131,7 +135,7 @@ function App() {
   return (
     <div className="app-shell">
       <header className="topbar">
-        <a className="brand" href="/" onClick={() => setActiveCategory('')}>
+        <a className="brand" href="#inicio" onClick={(e) => { e.preventDefault(); setActiveCategory(''); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
           <img src="logo.png" alt="Logo"
           width="85" height="70"></img>
         </a>
@@ -194,7 +198,7 @@ function App() {
           </div>
 
           <div className="nav-right">
-            <a href="/" onClick={() => { closeMenus(); setActiveCategory('') }}>
+            <a href="#inicio" onClick={(e) => { e.preventDefault(); closeMenus(); setActiveCategory(''); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
               Inicio
             </a>
             <a href="#productos" onClick={closeMenus}>
@@ -248,7 +252,7 @@ function App() {
             <p className="status-message">No se encontraron productos en esta categoria.</p>
           )}
 
-          {activeCategory ? (
+          {activeCategory || searchValue.trim() ? (
             <div className="offer-grid">
               {filteredProducts.map((product) => (
                 <article
@@ -269,7 +273,7 @@ function App() {
             </div>
           ) : (
             componentsMenu.map(cat => {
-              const catProducts = products.filter(p => p.category === cat.category);
+              const catProducts = filteredProducts.filter(p => p.category === cat.category);
               if (catProducts.length === 0) return null;
               return (
                 <div key={cat.category} className="category-group">

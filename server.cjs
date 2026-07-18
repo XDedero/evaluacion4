@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const crypto = require('crypto');
 
 const app = express();
 const port = 3001;
@@ -18,6 +19,7 @@ app.use((req, res, next) => {
 
 const productsPath = path.join(__dirname, 'data', 'products.json');
 const ordersPath = path.join(__dirname, 'data', 'orders.json');
+const adminPath = path.join(__dirname, 'data', 'admin.json');
 
 function readJson(filePath) {
   return JSON.parse(fs.readFileSync(filePath, 'utf8'));
@@ -30,6 +32,22 @@ function writeJson(filePath, data) {
 app.get('/api/products', (req, res) => {
   const products = readJson(productsPath);
   res.json(products);
+});
+
+app.post('/api/auth', (req, res) => {
+  const { password } = req.body;
+  if (!password) {
+    return res.status(400).json({ success: false, message: 'Contraseña requerida.' });
+  }
+
+  const admin = readJson(adminPath);
+  const hash = crypto.createHash('sha256').update(password).digest('hex');
+
+  if (hash === admin.passwordHash) {
+    return res.json({ success: true, message: 'Autenticación exitosa.' });
+  } else {
+    return res.status(401).json({ success: false, message: 'Contraseña incorrecta.' });
+  }
 });
 
 app.post('/api/orders', (req, res) => {

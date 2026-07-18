@@ -643,22 +643,21 @@ body {
   .section-header p {
     font-size: 0.95rem;
   }
-<<<<<<< HEAD
 }
 
 .crud-section {
     display: flex;
     justify-content: center;
     padding: 40px 20px;
-    background-color: #0b1120; 
+    background-color: #0b1120;
     font-family: sans-serif;
 }
 
 .crud-container {
     width: 100%;
-    max-width: 800px; 
-    background: #111827; 
-    border: 1px solid #10b981; 
+    max-width: 800px;
+    background: #111827;
+    border: 1px solid #10b981;
     border-radius: 12px;
     padding: 30px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
@@ -667,7 +666,7 @@ body {
 
 .crud-title {
     font-size: 1.8rem;
-    color: #10b981; 
+    color: #10b981;
     margin-bottom: 25px;
     text-align: center;
     text-transform: uppercase;
@@ -682,13 +681,13 @@ body {
 
 .form-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr; 
+    grid-template-columns: 2fr 1fr;
     gap: 20px;
 }
 
 @media (max-width: 600px) {
     .form-grid {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
     }
 }
 
@@ -716,13 +715,13 @@ body {
 }
 
 .form-group input:focus {
-    border-color: #10b981; 
+    border-color: #10b981;
 }
 
 .form-actions {
     display: flex;
     gap: 15px;
-    justify-content: flex-end; 
+    justify-content: flex-end;
 }
 
 .btn-primary {
@@ -771,7 +770,7 @@ body {
 }
 
 .table-responsive {
-    overflow-x: auto; 
+    overflow-x: auto;
 }
 
 .crud-table {
@@ -780,7 +779,7 @@ body {
     margin-top: 10px;
 }
 
-.crud-table th, 
+.crud-table th,
 .crud-table td {
     padding: 14px 16px;
     text-align: left;
@@ -799,7 +798,7 @@ body {
 }
 
 .crud-table tbody tr:hover {
-    background-color: #1f2937; 
+    background-color: #1f2937;
 }
 
 .text-center {
@@ -980,6 +979,25 @@ body {
     border-left: 4px solid #00c010f5;
     border-radius: 8px;
     display: inline-block;
-=======
->>>>>>> b460b9ef539254bf8a86170dc1738734a7194893
+}
+
+.auth-container {
+    padding: 10px 0;
+}
+
+.auth-form {
+    max-width: 420px;
+    margin: 0 auto;
+    background: #1a2332;
+    border: 1px solid #374151;
+    border-radius: 12px;
+    padding: 28px 24px;
+}
+
+.auth-form .form-group {
+    margin-bottom: 16px;
+}
+
+.auth-form .form-group input {
+    width: 100%;
 }
