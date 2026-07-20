@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import './App.css'
 import ProductDetailModal from './components/ProductDetailModal'
 import CrudProductos from './components/CrudProductos';
+import { useLocalStorage } from './hooks/useLocalStorage';
 
 const componentsMenu = [
   { label: 'Notebooks', category: 'Notebooks' },
@@ -24,18 +25,33 @@ function App() {
   const [isNavOpen, setIsNavOpen] = useState(false)
   const [isComponentsOpen, setIsComponentsOpen] = useState(false)
   const [searchValue, setSearchValue] = useState('')
-  const [products, setProducts] = useState(() => {
-    const saved = localStorage.getItem('catalogProducts');
-    return saved ? JSON.parse(saved) : [];
-  })
-  const [trash, setTrash] = useState(() => {
-    const saved = localStorage.getItem('trashProducts');
-    return saved ? JSON.parse(saved) : [];
-  })
+  const [products, setProducts] = useLocalStorage('catalogProducts', [])
+  const [trash, setTrash] = useLocalStorage('trashProducts', [])
   const [loading, setLoading] = useState(true)
   const [message, setMessage] = useState('')
   const [selectedProduct, setSelectedProduct] = useState(null)
   const [activeCategory, setActiveCategory] = useState(getCategoryFromURL)
+
+  // Contador de productos más pedidos (cookie)
+  const [orderCounts, setOrderCounts] = useState(() => {
+    try {
+      const cookie = document.cookie.split('; ').find(row => row.startsWith('orderCounts='));
+      if (cookie) {
+        return JSON.parse(decodeURIComponent(cookie.split('=')[1]));
+      }
+    } catch { /* cookie corrupta, ignorar */ }
+    return {};
+  });
+
+  const incrementOrderCount = (productId) => {
+    setOrderCounts(prev => {
+      const updated = { ...prev, [productId]: (prev[productId] || 0) + 1 };
+      const d = new Date();
+      d.setTime(d.getTime() + 30 * 24 * 60 * 60 * 1000);
+      document.cookie = `orderCounts=${encodeURIComponent(JSON.stringify(updated))}; expires=${d.toUTCString()}; path=/`;
+      return updated;
+    });
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -56,13 +72,11 @@ function App() {
         }
         const data = await response.json()
         setProducts(data)
-        localStorage.setItem('catalogProducts', JSON.stringify(data))
       } catch (error) {
         try {
           const fallbackResponse = await fetch('/products.json')
           const fallbackData = await fallbackResponse.json()
           setProducts(fallbackData)
-          localStorage.setItem('catalogProducts', JSON.stringify(fallbackData))
         } catch {
           setMessage('No se pudieron cargar los productos.')
         }
@@ -73,16 +87,6 @@ function App() {
 
     loadProducts()
   }, [])
-
-  useEffect(() => {
-    if (!loading) {
-      localStorage.setItem('catalogProducts', JSON.stringify(products))
-    }
-  }, [products, loading])
-
-  useEffect(() => {
-    localStorage.setItem('trashProducts', JSON.stringify(trash))
-  }, [trash])
 
   const filteredProducts = useMemo(() => {
     let result = products
@@ -265,6 +269,11 @@ function App() {
                 >
                   <div className="offer-top">
                     <span className="badget">{product.category}</span>
+                    {(orderCounts[product.id] || 0) > 0 && (
+                      <span className="order-count-badge">
+                        🔥 {orderCounts[product.id]} pedidos
+                      </span>
+                    )}
                   </div>
                   <h3>{product.name}</h3>
                   <p className="card-note">Stock: {product.stock}</p>
@@ -290,6 +299,11 @@ function App() {
                       >
                         <div className="offer-top">
                           <span className="badget">{product.category}</span>
+                          {(orderCounts[product.id] || 0) > 0 && (
+                            <span className="order-count-badge">
+                              🔥 {orderCounts[product.id]} pedidos
+                            </span>
+                          )}
                         </div>
                         <h3>{product.name}</h3>
                         <p className="card-note">Stock: {product.stock}</p>
@@ -307,6 +321,8 @@ function App() {
           categories={componentsMenu}
           trash={trash}
           setTrash={setTrash}
+          orderCounts={orderCounts}
+          onOrderPlaced={incrementOrderCount}
         />
         <section className="info-section" id="contacto">
           <h2>Contacto</h2>

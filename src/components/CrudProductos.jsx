@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 // Hash SHA-256 de la contraseña "evaluacionfinal"
 const PASSWORD_HASH = 'e3582e71541675b5a4e093723285104564fd5d83d1c570e277daba1250c96ace';
@@ -93,17 +94,16 @@ function getDefaultSpecs(category) {
   return labels.map(label => ({ label, value: '' }));
 }
 
-export default function CrudProductos({ products, setProducts, categories, trash, setTrash }) {
-  // Estado de autenticación
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+export default function CrudProductos({ products, setProducts, categories, trash, setTrash, orderCounts, onOrderPlaced }) {
+  // Estado de autenticación con sessionStorage (persiste al recargar pero no al cerrar pestaña)
+  const [isAuthenticated, setIsAuthenticated] = useState(() => {
+    return sessionStorage.getItem('adminAuth') === 'true';
+  });
   const [authPassword, setAuthPassword] = useState('');
   const [authError, setAuthError] = useState('');
   const [authLoading, setAuthLoading] = useState(false);
 
-  const [orders, setOrders] = useState(() => {
-    const saved = localStorage.getItem('crudOrders');
-    return saved ? JSON.parse(saved) : [];
-  });
+  const [orders, setOrders] = useLocalStorage('crudOrders', []);
 
   const [name, setName] = useState('');
   const [stock, setStock] = useState('');
@@ -115,10 +115,6 @@ export default function CrudProductos({ products, setProducts, categories, trash
   // Order form state
   const [orderProductId, setOrderProductId] = useState('');
   const [orderQuantity, setOrderQuantity] = useState('');
-
-  useEffect(() => {
-    localStorage.setItem('crudOrders', JSON.stringify(orders));
-  }, [orders]);
 
   const resetForm = () => {
     setName('');
@@ -138,6 +134,7 @@ export default function CrudProductos({ products, setProducts, categories, trash
       const hash = await sha256(authPassword);
       if (hash === PASSWORD_HASH) {
         setIsAuthenticated(true);
+        sessionStorage.setItem('adminAuth', 'true');
         setAuthPassword('');
       } else {
         setAuthError('Contraseña incorrecta. Inténtalo de nuevo.');
@@ -152,6 +149,7 @@ export default function CrudProductos({ products, setProducts, categories, trash
   // Cerrar sesión
   const handleLogout = () => {
     setIsAuthenticated(false);
+    sessionStorage.removeItem('adminAuth');
     setAuthPassword('');
     setAuthError('');
   };
@@ -367,6 +365,11 @@ export default function CrudProductos({ products, setProducts, categories, trash
         ? { ...p, stock: p.stock - quantity }
         : p
     ));
+
+    // Incrementar contador de pedidos del producto (cookie)
+    if (onOrderPlaced) {
+      onOrderPlaced(product.id);
+    }
 
     const now = new Date();
     const newOrder = {
@@ -589,13 +592,14 @@ export default function CrudProductos({ products, setProducts, categories, trash
                     <th>Nombre del Equipo</th>
                     <th>Categoría</th>
                     <th>Stock</th>
+                    <th>Pedidos</th>
                     <th className="text-center">Acciones</th>
                   </tr>
                 </thead>
                 <tbody>
                   {filteredProducts.length === 0 ? (
                     <tr>
-                      <td colSpan="4" style={{ textAlign: 'center', color: '#9ca3af' }}>
+                      <td colSpan="5" style={{ textAlign: 'center', color: '#9ca3af' }}>
                         {searchTerm.trim()
                           ? 'No se encontraron productos con ese nombre.'
                           : 'No hay productos registrados.'}
@@ -610,6 +614,12 @@ export default function CrudProductos({ products, setProducts, categories, trash
                           <span className={product.stock === 0 ? 'stock-zero' : 'stock-ok'}>
                             {product.stock}
                           </span>
+                        </td>
+                        <td>
+                          {orderCounts && orderCounts[product.id]
+                            ? <span style={{ color: '#f97316', fontWeight: 'bold' }}>🔥 {orderCounts[product.id]}</span>
+                            : <span style={{ color: '#9ca3af' }}>0</span>
+                          }
                         </td>
                         <td className="text-center">
                           <button className="btn-edit" onClick={() => handleEdit(product)}>

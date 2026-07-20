@@ -434,27 +434,122 @@ useEffect(() => {
 }, []);
 ```
 
-### 6.4 Persistencia del catálogo en `localStorage`
+### 6.4 Hook personalizado `useLocalStorage`
 
-Los productos del catálogo principal también se persisten en `localStorage` bajo la clave `catalogProducts`. Esto permite que los productos agregados mediante el CRUD se mantengan al recargar la página:
+Se creó un hook personalizado en `src/hooks/useLocalStorage.js` que encapsula la lógica de persistencia en `localStorage`, evitando la repetición de código. Se utiliza tanto en `App.jsx` como en `CrudProductos.jsx`:
 
-```jsx
-const [products, setProducts] = useState(() => {
-  const saved = localStorage.getItem('catalogProducts');
-  return saved ? JSON.parse(saved) : [];
-})
+```js
+import { useState, useEffect } from 'react';
 
-useEffect(() => {
-  if (!loading) {
-    localStorage.setItem('catalogProducts', JSON.stringify(products))
-  }
-}, [products, loading])
+export function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(() => {
+    try {
+      const saved = localStorage.getItem(key);
+      return saved ? JSON.parse(saved) : initialValue;
+    } catch {
+      return initialValue;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch {
+      // localStorage lleno o no disponible
+    }
+  }, [key, value]);
+
+  return [value, setValue];
+}
 ```
 
-### 6.5 Resumen de almacenamiento en el navegador
+**Uso en `App.jsx`:**
 
-| Clave de localStorage | Contenido | Uso |
-|---|---|---|
-| `catalogProducts` | Lista completa de productos | Persistir catálogo tras operaciones CRUD |
-| `trashProducts` | Productos eliminados | Papelera de reciclaje |
-| `crudOrders` | Historial de pedidos | Mantener registro de préstamos de equipos |
+```jsx
+const [products, setProducts] = useLocalStorage('catalogProducts', [])
+const [trash, setTrash] = useLocalStorage('trashProducts', [])
+```
+
+**Uso en `CrudProductos.jsx`:**
+
+```jsx
+const [orders, setOrders] = useLocalStorage('crudOrders', [])
+```
+
+### 6.5 `sessionStorage` para la sesión del administrador
+
+La autenticación del panel de administración se persiste mediante `sessionStorage`. Esto permite que la sesión se mantenga al recargar la página (F5), pero se cierre automáticamente al cerrar la pestaña del navegador:
+
+```jsx
+// Inicialización: verifica si ya existe una sesión activa
+const [isAuthenticated, setIsAuthenticated] = useState(() => {
+  return sessionStorage.getItem('adminAuth') === 'true';
+});
+
+// Al iniciar sesión correctamente:
+sessionStorage.setItem('adminAuth', 'true');
+
+// Al cerrar sesión:
+sessionStorage.removeItem('adminAuth');
+```
+
+### 6.6 Cookies para contador de productos más pedidos
+
+Se implementa una cookie llamada `orderCounts` que almacena un objeto con el conteo de pedidos por producto. Cada vez que se realiza un pedido desde el panel de administración, el contador del producto correspondiente se incrementa:
+
+**Lectura y escritura de la cookie en `App.jsx`:**
+
+```jsx
+// Leer cookie al iniciar
+const [orderCounts, setOrderCounts] = useState(() => {
+  try {
+    const cookie = document.cookie.split('; ').find(row => row.startsWith('orderCounts='));
+    if (cookie) {
+      return JSON.parse(decodeURIComponent(cookie.split('=')[1]));
+    }
+  } catch { /* cookie corrupta, ignorar */ }
+  return {};
+});
+
+// Incrementar contador y guardar cookie (expira en 30 días)
+const incrementOrderCount = (productId) => {
+  setOrderCounts(prev => {
+    const updated = { ...prev, [productId]: (prev[productId] || 0) + 1 };
+    const d = new Date();
+    d.setTime(d.getTime() + 30 * 24 * 60 * 60 * 1000);
+    document.cookie = `orderCounts=${encodeURIComponent(JSON.stringify(updated))}; expires=${d.toUTCString()}; path=/`;
+    return updated;
+  });
+};
+```
+
+El contador se muestra en cada tarjeta de producto del catálogo:
+
+```jsx
+{(orderCounts[product.id] || 0) > 0 && (
+  <span className="order-count-badge">
+    🔥 {orderCounts[product.id]} pedidos
+  </span>
+)}
+```
+
+Y también en la tabla de inventario del panel CRUD, en una nueva columna **"Pedidos"**:
+
+```jsx
+<td>
+  {orderCounts && orderCounts[product.id]
+    ? <span style={{ color: '#f97316', fontWeight: 'bold' }}>🔥 {orderCounts[product.id]}</span>
+    : <span style={{ color: '#9ca3af' }}>0</span>
+  }
+</td>
+```
+
+### 6.7 Resumen de almacenamiento en el navegador
+
+| Tecnología | Clave | Contenido | Uso |
+|---|---|---|---|
+| `localStorage` | `catalogProducts` | Lista completa de productos | Persistir catálogo tras operaciones CRUD |
+| `localStorage` | `trashProducts` | Productos eliminados | Papelera de reciclaje |
+| `localStorage` | `crudOrders` | Historial de pedidos | Mantener registro de pedidos de equipos |
+| `sessionStorage` | `adminAuth` | Estado de autenticación (`"true"`) | Mantener sesión del admin durante la pestaña actual |
+| `document.cookie` | `orderCounts` | Objeto JSON con conteo de pedidos por ID de producto | Registrar los productos más pedidos (expira en 30 días) |
